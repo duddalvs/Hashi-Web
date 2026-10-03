@@ -1874,6 +1874,74 @@ tbody tr:last-child td {
   font-size: 8px;
   color: var(--subtle);
 }
+.vehicle-crlv {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+  font-size: 12px;
+}
+.crlv-heading,
+.crlv-actions,
+.crlv-error {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.crlv-heading > svg {
+  color: var(--blue);
+}
+.crlv-heading > span {
+  margin-left: auto;
+  color: var(--muted);
+  font-size: 11px;
+}
+.crlv-date,
+.crlv-muted {
+  color: var(--muted);
+  line-height: 1.5;
+}
+.crlv-muted {
+  flex-direction: row;
+  align-items: center;
+}
+.crlv-actions .button {
+  flex: 1;
+  min-height: 36px;
+  padding: 8px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.crlv-version {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: var(--muted);
+}
+.crlv-version select {
+  width: 100%;
+  min-width: 0;
+  padding: 8px;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  font: inherit;
+}
+.crlv-error {
+  margin-bottom: 18px;
+  padding: 12px;
+  border: 1px solid var(--accent);
+  border-radius: 7px;
+  font-size: 12px;
+}
+.crlv-download-error {
+  color: var(--accent);
+  line-height: 1.5;
+}
 .report-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

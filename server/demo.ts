@@ -177,6 +177,10 @@ export function createDemo() {
         return session.profile;
       case 'listar_catalogos':
         return structuredClone(session.catalogs);
+      case 'web_listar_crlvs':
+        return [];
+      case 'web_obter_crlv':
+        return null;
       case 'web_criar_cadastro': {
         const kind = catalogKindSchema.parse(args.p_tipo);
         const key =

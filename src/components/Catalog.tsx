@@ -1,10 +1,13 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Search, Truck, Users, MapPin, Plus } from 'lucide-react';
 import { referenceSchema, vehicleSchema, type Bootstrap, type Catalogs } from '../domain/models';
 import type { CatalogKind } from '../domain/admin';
 import { CatalogForm, catalogLabels } from './AdminForms';
 import { matches } from '../domain/rules';
 import { Empty } from './ui';
+import { api, errorMessage } from '../lib/api';
+import { crlvListSchema, type Crlv } from '../domain/crlv';
+import { VehicleCrlv } from './VehicleCrlv';
 export function Catalog({
   page,
   data,
@@ -17,6 +20,29 @@ export function Catalog({
   const [search, setSearch] = useState('');
   const [creating, setCreating] = useState(false);
   const vehicles = page === 'veiculos';
+  const [documents, setDocuments] = useState<Crlv[]>([]);
+  const [loadingCrlv, setLoadingCrlv] = useState(vehicles);
+  const [crlvError, setCrlvError] = useState('');
+  const [retry, setRetry] = useState(0);
+  useEffect(() => {
+    if (!vehicles) return;
+    let cancelled = false;
+    setLoadingCrlv(true);
+    setCrlvError('');
+    api<unknown>('/vehicles/crlv')
+      .then((result) => {
+        if (!cancelled) setDocuments(crlvListSchema.parse(result));
+      })
+      .catch((error) => {
+        if (!cancelled) setCrlvError(errorMessage(error));
+      })
+      .finally(() => {
+        if (!cancelled) setLoadingCrlv(false);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [vehicles, retry, data.syncedAt]);
   const people = page === 'funcionarios';
   const rows = vehicles
     ? data.catalogs.vehicles.map((v) => ({
@@ -45,7 +71,9 @@ export function Catalog({
             onChange={(e) => setSearch(e.target.value)}
           />
         </div>
-        <span className="badge">{visible.length} cadastros ativos</span>
+        <span className="badge">
+          {visible.length} {vehicles ? 'cadastros' : 'cadastros ativos'}
+        </span>
         {data.profile.perfil === 'admin' && (
           <button className="button primary" onClick={() => setCreating(true)}>
             <Plus size={17} />
@@ -59,6 +87,14 @@ export function Catalog({
           ? 'As pessoas deste catálogo são selecionadas nas equipes e manutenções.'
           : 'Os dados são atualizados a partir do banco da operação.'}
       </p>
+      {vehicles && crlvError && (
+        <div className="crlv-error" role="alert">
+          <span>{crlvError}</span>
+          <button className="button secondary" onClick={() => setRetry((value) => value + 1)}>
+            Tentar novamente
+          </button>
+        </div>
+      )}
       {!visible.length ? (
         <Empty
           title="Nenhum cadastro encontrado"
@@ -72,13 +108,25 @@ export function Catalog({
                 <span className="catalog-icon">
                   <Icon size={21} />
                 </span>
-                <span className="badge green">
-                  <span className="positive-dot" />
-                  Ativo
-                </span>
+                {!vehicles && (
+                  <span className="badge green">
+                    <span className="positive-dot" />
+                    Ativo
+                  </span>
+                )}
               </div>
               <h3 className={vehicles ? 'plate-title' : ''}>{row.title}</h3>
               <p>{row.subtitle}</p>
+              {vehicles && (
+                <VehicleCrlv
+                  vehicleId={row.id}
+                  plate={row.title}
+                  equipment={row.type === 'Equipamento'}
+                  documents={documents.filter((doc) => doc.veiculo_id === row.id)}
+                  loading={loadingCrlv}
+                  failed={!!crlvError}
+                />
+              )}
               <div className="catalog-card-bottom">
                 <span>{row.type}</span>
                 <small>ID {row.id}</small>

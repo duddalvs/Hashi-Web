@@ -5,6 +5,7 @@ import express from 'express';
 import { createServer } from 'node:http';
 import { createApp } from './app';
 import { createRpc } from './rpc';
+import { createCrlvReader } from './crlv';
 
 const production = process.argv.includes('--production') || process.env.NODE_ENV === 'production';
 const port = Number(process.env.PORT || 3000);
@@ -17,6 +18,7 @@ const app = createApp({
   production,
   secure: process.env.COOKIE_SECURE === 'true',
   demo: process.env.ENABLE_DEMO === 'true',
+  readCrlv: createCrlvReader(process.env.SUPABASE_URL ?? '', process.env.SUPABASE_SECRET_KEY ?? ''),
 });
 const server = createServer(app);
 if (production) {

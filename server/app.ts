@@ -2,6 +2,8 @@ import express, { type ErrorRequestHandler } from 'express';
 import cookieParser from 'cookie-parser';
 import helmet from 'helmet';
 import { z } from 'zod';
+import { crlvFileSchema, crlvListSchema } from '../src/domain/crlv';
+import type { CrlvReader } from './crlv';
 import {
   catalogsSchema,
   historySchema,
@@ -47,6 +49,7 @@ export function createApp(options: {
   secure?: boolean;
   production?: boolean;
   demo?: boolean;
+  readCrlv?: CrlvReader;
 }) {
   const app = express();
   const demo = createDemo();
@@ -256,6 +259,36 @@ export function createApp(options: {
     const token = res.locals.token as string;
     await rpcFor(token)('encerrar_sessao', { p_token: token });
     res.clearCookie(cookieName, cookies).json({ ok: true });
+  });
+  app.get('/api/vehicles/crlv', async (_req, res) => {
+    const token = res.locals.token as string;
+    res.json(crlvListSchema.parse(await rpcFor(token)('web_listar_crlvs', { p_token: token })));
+  });
+  app.get('/api/vehicles/:vehicleId/crlv/:documentId', async (req, res) => {
+    const vehicleId = z.coerce.number().int().positive().parse(req.params.vehicleId);
+    const documentId = z.uuid().parse(req.params.documentId);
+    const download = z.enum(['0', '1']).optional().parse(req.query.download) === '1';
+    const token = res.locals.token as string;
+    const result = await rpcFor(token)('web_obter_crlv', {
+      p_token: token,
+      p_veiculo_id: vehicleId,
+      p_documento_id: documentId,
+    });
+    if (!result || token.startsWith('demo-'))
+      throw new ApiError('CRLV não encontrado para este veículo.', 404);
+    const document = crlvFileSchema.parse(result);
+    if (document.veiculo_id !== vehicleId || document.id !== documentId)
+      throw new ApiError('CRLV não encontrado para este veículo.', 404);
+    if (!options.readCrlv)
+      throw new ApiError('O armazenamento de CRLVs precisa ser configurado no servidor.', 503);
+    const content = await options.readCrlv(document);
+    res
+      .type('application/pdf')
+      .set(
+        'Content-Disposition',
+        `${download ? 'attachment' : 'inline'}; filename="${document.arquivo}"`,
+      )
+      .send(content);
   });
   app.get('/api/entry/:type/:id', async (req, res) => {
     const type = z.enum(['registro', 'manutencao']).parse(req.params.type);

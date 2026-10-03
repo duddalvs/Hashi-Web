@@ -1,0 +1,351 @@
+{
+  "data": "2026-10-03",
+  "observacao": "Inclui fontes em disco, inclusive não commitados. Ignora segredos, PDFs, caches e a própria documentação nova para evitar autorreferência.",
+  "arquivos": [
+    {
+      "arquivo": ".env.example",
+      "bytes": 448,
+      "sha256": "b957a9bde593b4277e04cf45cc95367381ddd337a0cce650a522e1aba48a3a03"
+    },
+    {
+      "arquivo": ".gitignore",
+      "bytes": 108,
+      "sha256": "ee2e2b86765a4581e7fae2a7fc4b6d66d57db97cd11c584ae0645e235d484e1a"
+    },
+    {
+      "arquivo": ".npmrc",
+      "bytes": 23,
+      "sha256": "a72a46686a7bb47f39a19b14546c7e461b1d2a124a84dd264acaa37d375d3f35"
+    },
+    {
+      "arquivo": ".prettierignore",
+      "bytes": 71,
+      "sha256": "38ee9f24b6364f9475bb0b7bf98c567eb18c36bfe256c00d642ba2d2c87f880d"
+    },
+    {
+      "arquivo": ".prettierrc.json",
+      "bytes": 67,
+      "sha256": "f583ff6d8ba542b76af46c4c024a0941b77aee51133bb0f69ec6eb1fa613de7e"
+    },
+    {
+      "arquivo": "docs/ACESSO-BANCO-VISUALIZACOES.md",
+      "bytes": 5452,
+      "sha256": "ef169fe3e5d779f5891f1d78d333dd222f4d3ba21fabe30045678973def9a3b5"
+    },
+    {
+      "arquivo": "docs/ACESSOS.md",
+      "bytes": 9814,
+      "sha256": "c50cf80727174c54f0d258f963a930c7defb4380f52e732e8ef6f431557bc4c4"
+    },
+    {
+      "arquivo": "docs/ADMINISTRACAO-WEB.md",
+      "bytes": 5446,
+      "sha256": "83125a2b6f7a1759bc71d850cbfa25f6f481411d38b654ca0cf46901b24f72c0"
+    },
+    {
+      "arquivo": "docs/DOCUMENTACAO-DO-PROJETO.md",
+      "bytes": 23622,
+      "sha256": "3dc99c638528b71dd08b07f91e8ca7998df40598d5674ffd7ea26c954d3f3838"
+    },
+    {
+      "arquivo": "docs/ENTREGA.md",
+      "bytes": 16888,
+      "sha256": "5a5d333ba4d620af5f788c425b288054e4d499e44c4a0681aa6c6d5abc5c0ba1"
+    },
+    {
+      "arquivo": "docs/HASHI-APP-INTEGRACAO-HASH-WEB.md",
+      "bytes": 103986,
+      "sha256": "1dc70a79ad86961c68564071e06b63314f6b6f49942c8f8fd208a8b32f01a7a0"
+    },
+    {
+      "arquivo": "docs/hashi-app-logo.md",
+      "bytes": 2307,
+      "sha256": "1b7657278e1d6d506a5ee0e85f5cb63a0104e6922fe28e69b897ecafc7b93e84"
+    },
+    {
+      "arquivo": "docs/solicitacao.md",
+      "bytes": 17675,
+      "sha256": "046fcc3134277518e822d5ebef6de52192de75e4526c65431d772fb7106c7ccb"
+    },
+    {
+      "arquivo": "index.html",
+      "bytes": 2723,
+      "sha256": "bc54b5f175e5476585b85a3aff08edb11f8c4f09708ff5df6276a4993cc06a3c"
+    },
+    {
+      "arquivo": "INICIAR.cmd",
+      "bytes": 344,
+      "sha256": "261b5d2f5a1a4b0862654cf8c873800184b445ef1547958483b276c4716c3a9a"
+    },
+    {
+      "arquivo": "package-lock.json",
+      "bytes": 102011,
+      "sha256": "47b5b5ac44bbf19f8446fd653f54bbf62eb70c53c071b01d12ed7f7f236bfde4"
+    },
+    {
+      "arquivo": "package.json",
+      "bytes": 1146,
+      "sha256": "ef9c44b4e123f5b5aa0530293ba3e13112caa9c99989a864d05fa3a01667eb82"
+    },
+    {
+      "arquivo": "playwright.config.ts",
+      "bytes": 736,
+      "sha256": "06a9412b81045cfae2ffb20ff00de8e64297d202a1a9a85caca6418e8877b65b"
+    },
+    {
+      "arquivo": "public/favicon.svg",
+      "bytes": 217,
+      "sha256": "7ece9e7f4d18f4c68aaf70ec82b79bdac2c3cfd48a6b62308e3374bd384dd70a"
+    },
+    {
+      "arquivo": "README.md",
+      "bytes": 20430,
+      "sha256": "55ccce395d2dfb4a7001d6694fc7523f96adc483e74287bdce2f05a4e235f6b2"
+    },
+    {
+      "arquivo": "scripts/check-remote.ts",
+      "bytes": 2927,
+      "sha256": "8e48b77b8f20a1440e7baf1316df275bca3e288205ee1b86764fa0b05723d7db"
+    },
+    {
+      "arquivo": "scripts/comparar-crlv.mjs",
+      "bytes": 6604,
+      "sha256": "57604327822d925587afdb779021f3fdf0c0554bd1670c375fdcd3554601f172"
+    },
+    {
+      "arquivo": "scripts/migrar-crlv-storage.mjs",
+      "bytes": 5104,
+      "sha256": "d2ab1b61e62f6ac86158dae9c9ce3c405a51564cacbdd5e8a853052fc0545733"
+    },
+    {
+      "arquivo": "scripts/open-hashi.cjs",
+      "bytes": 5613,
+      "sha256": "ca7317987687699713c6d0fa8dd9ef2a6040d5899fcc2d133b8a740347c07722"
+    },
+    {
+      "arquivo": "scripts/preparar-crlv.mjs",
+      "bytes": 6862,
+      "sha256": "763de738aba7d05e641037f46205a4a8ac682ef1d1b0ada5714941f119b81de6"
+    },
+    {
+      "arquivo": "server/app.ts",
+      "bytes": 13795,
+      "sha256": "36d7b729b7533e3f09e26d05edd5d11af23a540da23382e1cd234c2b85ef4ac6"
+    },
+    {
+      "arquivo": "server/crlv.ts",
+      "bytes": 3167,
+      "sha256": "094666c497094d9cf368a270cad2937f028e0b448114c8bf2fdee73d6386ab06"
+    },
+    {
+      "arquivo": "server/demo.ts",
+      "bytes": 11554,
+      "sha256": "c53c105ddd52453c10040973240d15083f15c0fae21d1d3b19f240b3d899e7b4"
+    },
+    {
+      "arquivo": "server/index.ts",
+      "bytes": 1858,
+      "sha256": "83ecdccd64c89ce75ab44c521d878d43d7a75ab9686908903573c669b903e6cc"
+    },
+    {
+      "arquivo": "server/rpc.ts",
+      "bytes": 1839,
+      "sha256": "fc6b661ad84efe56e798933c80207f94f08fa5971cbcffbcd729b7cf44d14792"
+    },
+    {
+      "arquivo": "src/App.tsx",
+      "bytes": 28193,
+      "sha256": "30b8ceb9edad9da43f7c5e14b4276e857976caf7ad271253820e744dd0d014d8"
+    },
+    {
+      "arquivo": "src/components/AdminForms.tsx",
+      "bytes": 12057,
+      "sha256": "02ef0faa720a5230e4f508e98531fd013143e3ae05b8a281fec11c8d584da92e"
+    },
+    {
+      "arquivo": "src/components/Catalog.tsx",
+      "bytes": 5960,
+      "sha256": "597b657c69ebc4f77eeca7297428420f40bd516858f3da577089803c85c37521"
+    },
+    {
+      "arquivo": "src/components/DayView.tsx",
+      "bytes": 8885,
+      "sha256": "88bff916b1ee2d15c262d9ef599a38a9afd7ba47defd632eb39f8c12ce23c86b"
+    },
+    {
+      "arquivo": "src/components/EntryForm.tsx",
+      "bytes": 14965,
+      "sha256": "79a26e63808224858d37bdc316a2651b9ded35e0b59801bf40ff73e956bd99f5"
+    },
+    {
+      "arquivo": "src/components/Filters.tsx",
+      "bytes": 8855,
+      "sha256": "d770a7cb5ac10347d3b7b3254e2ec219ad25997aa8442c1f976ec4453334af63"
+    },
+    {
+      "arquivo": "src/components/Login.tsx",
+      "bytes": 8688,
+      "sha256": "9bc11526412dd75863eaf5b37344d28f8ab80d3a934690c9c6aa68fb5b376ffd"
+    },
+    {
+      "arquivo": "src/components/Overview.tsx",
+      "bytes": 10893,
+      "sha256": "f59d665f860fbcae1eb870b0bbc51b1f22541518156261cfd2cd4116b337802b"
+    },
+    {
+      "arquivo": "src/components/RecordsTable.tsx",
+      "bytes": 6869,
+      "sha256": "e92c74a912d11870eb237e5c6497c232abaf5ccacac0a1da770bbdffa29f9e5c"
+    },
+    {
+      "arquivo": "src/components/ServiceMenu.tsx",
+      "bytes": 7411,
+      "sha256": "cf3cebad7fd67ec2723aa447557fb0fdedf5a7b6cac5d094266714f3d650d82e"
+    },
+    {
+      "arquivo": "src/components/ui.tsx",
+      "bytes": 6821,
+      "sha256": "7a552a2e601f3a57cc23bbc1045bd0514490ff76252942c94d1be4cf3416882d"
+    },
+    {
+      "arquivo": "src/components/UserManagement.tsx",
+      "bytes": 5615,
+      "sha256": "ed978865cdc39feabf874df3423714f6e14c467069a8ad524aa3bf1c17b81e88"
+    },
+    {
+      "arquivo": "src/components/VehicleCrlv.tsx",
+      "bytes": 3750,
+      "sha256": "416455cf661885b9ecbe0a7823eb05d1b9c60b5291e06a34fd6a5640d86fea63"
+    },
+    {
+      "arquivo": "src/domain/admin.ts",
+      "bytes": 1703,
+      "sha256": "84d56668ab86416c52ec4c2b38cd505d177ee6a77251e56294bcded9e4794f10"
+    },
+    {
+      "arquivo": "src/domain/crlv.ts",
+      "bytes": 817,
+      "sha256": "84fea5e512748ed6b26c28aa205d572e5d7b3a9370a3ee0c178002c0ee26421b"
+    },
+    {
+      "arquivo": "src/domain/filters.ts",
+      "bytes": 3985,
+      "sha256": "3cc915c88d1daa032c240891b9c2fc3b5ebf693ca27bf53d77b7492eac0b6259"
+    },
+    {
+      "arquivo": "src/domain/models.ts",
+      "bytes": 2197,
+      "sha256": "1d402c6bc0340b666e2c5565b3373db12fc7956cf2976f5b8df4a3b1a8177538"
+    },
+    {
+      "arquivo": "src/domain/rules.ts",
+      "bytes": 4699,
+      "sha256": "033898cbbd84aa3ee0c829081198521a0428d1cde80a47370d138f2ffab32665"
+    },
+    {
+      "arquivo": "src/lib/api.ts",
+      "bytes": 1995,
+      "sha256": "bd72cbffffec59fbe550ffada8ab1902fa2e734f1f67edd2e6509528eb62ea9d"
+    },
+    {
+      "arquivo": "src/lib/navigation.ts",
+      "bytes": 4186,
+      "sha256": "e060d3bbafdb0a9d9b50c87db8e4f2d3ebe51fa5d65af6754e10274240df15b8"
+    },
+    {
+      "arquivo": "src/main.tsx",
+      "bytes": 315,
+      "sha256": "e53a8b4c503129843e0bddf179689c21edfb7380a6da8a4a220f558cceb5ecec"
+    },
+    {
+      "arquivo": "src/styles.css",
+      "bytes": 60818,
+      "sha256": "afdec37b3cc75cecbe0a4f5ad7c9028b48245b9a5d84a7ecc236586e6df57e38"
+    },
+    {
+      "arquivo": "supabase/migrations/202609300004_web_admin.sql",
+      "bytes": 6205,
+      "sha256": "2698f743208ee090f33aa460494f7444f32e105a4b1ed283114e4572162a383f"
+    },
+    {
+      "arquivo": "supabase/migrations/202610020001_veiculo_crlv.sql",
+      "bytes": 3227,
+      "sha256": "53b8e8e625b123300e98a0e26e32af5d61872ddf29c84f36b4629d57d5b084a9"
+    },
+    {
+      "arquivo": "supabase/migrations/202610020002_crlv_storage.sql",
+      "bytes": 2094,
+      "sha256": "3e4b801b7ccf13bc300634567700025359741455e9a5fab5892296c27b032523"
+    },
+    {
+      "arquivo": "supabase/migrations/202610020003_crlv_vinculo_minimo.sql",
+      "bytes": 4712,
+      "sha256": "edd897b7ddec077e63bb133c637fcd792146ebec8f8c0d9624262726985eb526"
+    },
+    {
+      "arquivo": "supabase/tests/crlv-validation.sql",
+      "bytes": 5030,
+      "sha256": "c8455fff5d29ea43da16a33251f71c8588a55410e3e9d175cd9ecb9240aef609"
+    },
+    {
+      "arquivo": "supabase/tests/web-admin-inventory.sql",
+      "bytes": 1538,
+      "sha256": "0cae2593a31d1f4b59060e6116b2b2921e012af569bf1d6d78a349a8e48f98c8"
+    },
+    {
+      "arquivo": "supabase/tests/web-admin-preflight.sql",
+      "bytes": 1570,
+      "sha256": "65cfe2f970dadd4ad12c85af7aa6a73ac1a550f92fe960b2c5c9f0c80788e936"
+    },
+    {
+      "arquivo": "supabase/tests/web-admin-validation.sql",
+      "bytes": 9373,
+      "sha256": "9c80d8d0a086782424aa80a2a27fd07bb79bb58b6a3e015192f783c7960fa9cb"
+    },
+    {
+      "arquivo": "tests/crlv.test.ts",
+      "bytes": 7635,
+      "sha256": "a4c7acaa0b2aec9b401b7401f35c17c22bdd593f5f7fc1f5a56b0d1e1b6e31cd"
+    },
+    {
+      "arquivo": "tests/domain.test.ts",
+      "bytes": 5703,
+      "sha256": "5d0aca5163b1e150832db640b7e20646a11887a6edd048d45b9c761ea7e564df"
+    },
+    {
+      "arquivo": "tests/fixtures/crlv-exemplo.pdf",
+      "bytes": 1068,
+      "sha256": "a3b9d108009504ba85388db66e57fb5cf205468ed483dfb0f324cb1c25499f25"
+    },
+    {
+      "arquivo": "tests/server.test.ts",
+      "bytes": 16633,
+      "sha256": "29f57e50f4992618b32f4004caaa538af54169f2cbcfc1ec3ed3cd18dd733872"
+    },
+    {
+      "arquivo": "tests/ui/admin.spec.ts",
+      "bytes": 7158,
+      "sha256": "b7481f44d1b06fa7f80e1289f9d45776a136b4bfccc99b3aa501b33f42f96d7d"
+    },
+    {
+      "arquivo": "tests/ui/app.spec.ts",
+      "bytes": 21640,
+      "sha256": "39c9324a9a70e13e50af5693a804df307cd80410c4a521863a51a8d81550015a"
+    },
+    {
+      "arquivo": "tests/ui/crlv.spec.ts",
+      "bytes": 5313,
+      "sha256": "b7ff7173c36eeb4163cd7d3fc0be2a3a5577c8383688b7ecfe420cd9760cb9a0"
+    },
+    {
+      "arquivo": "tsconfig.json",
+      "bytes": 481,
+      "sha256": "d66770a25be51a7d4482551a85c1bbf1e15092c16abb95b767333117632dbaa4"
+    },
+    {
+      "arquivo": "vite.config.ts",
+      "bytes": 306,
+      "sha256": "afde41d94398e03c55536088f1a9b19aaa573ac8805631a747a1a8e461325985"
+    }
+  ]
+}

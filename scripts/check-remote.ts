@@ -44,6 +44,8 @@ const operations = [
     },
   ],
   ['web_definir_senha', { p_usuario_id: id, p_senha: 'InvalidSessionOnly123!' }],
+  ['web_listar_crlvs', {}],
+  ['web_obter_crlv', { p_veiculo_id: 1, p_documento_id: id }],
 ] as const;
 // Deliberately invalid sessions: checks signatures and rejection; never authenticates or writes records.
 let failed = false;
@@ -70,6 +72,7 @@ for (const table of [
   'registros_frota',
   'registro_equipes',
   'manutencoes',
+  'veiculo_documentos',
 ]) {
   const response = await fetch(`${url}/rest/v1/${table}?select=id&limit=0`, {
     headers: { apikey: key },
